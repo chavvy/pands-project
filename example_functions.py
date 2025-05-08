@@ -1,4 +1,6 @@
 #functions I used for getting information from iris dataset before I changed them
+#wanted to reduce repetitiveness
+#there were also cases where I was using variables of the same name in different functions (features, target, etc.)
 
 def iris_features(data):
     features = data['data']
