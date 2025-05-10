@@ -1,6 +1,7 @@
 #taking inspiration from applied databases project and making a menu for the user to interact with
 
 #FUNCTIONS WILL BE IMPORTED HERE
+from menu.summarise import summarise_data
 
 def show_menu():
     print("\nIris Dataset Analysis\n---------\n")
