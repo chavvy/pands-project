@@ -7,6 +7,7 @@ import numpy as np
 def data_info(name, var):
     print(f"\n{name} of the data:")
     print(var)
+    input("\nPress Enter to continue...")
 
 #functions for getting the first and last rows of a dataset
 #using variable n in case there's a need to get first or last 'n' number of rows instead of 5
