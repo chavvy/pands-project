@@ -20,7 +20,7 @@ def lastrow_data(array, n=5):
     print(array[-n:])
 
 #functions for summarizing the iris dataset
-def data_features_summary(features, features_names, stat=""):
+def data_features_summary(features, features_names, stat="", pause=True):
     #making a dictiononary to pair each numpy function
     #wanted this to have similar functionality to the iris_info function
     #where one function can be used for a similar purpose by calling different arguments
@@ -41,4 +41,12 @@ def data_features_summary(features, features_names, stat=""):
         answer = function(features[:, r])
         print(f"{name}: {answer:.2f}")
     
+    if pause:
+        input("\nPress Enter to continue...")
+
+def data_features_summary_all(features, features_names):
+
+    for stat in ["mean", "min", "max", "median", "std"]:
+        data_features_summary(features, features_names, stat, pause=False)
+        
     input("\nPress Enter to continue...")

@@ -1,4 +1,4 @@
-from utils import load_data, data_features_summary
+from utils import load_data, data_features_summary, data_features_summary_all
 
 dataset = load_data()
 features = dataset['data']
@@ -31,14 +31,9 @@ def summarise_data():
         elif choice == '5':
             data_features_summary(features, features_name, "std")
         elif choice == '6':
-            data_features_summary(features, features_name, "mean")
-            data_features_summary(features, features_name, "min")
-            data_features_summary(features, features_name, "max")
-            data_features_summary(features, features_name, "max")
-            data_features_summary(features, features_name, "median")
-            data_features_summary(features, features_name, "std")
+            data_features_summary_all(features, features_name)
         elif choice == 'x':
             print("Returning to menu...")
             return  #exit the loop and return to menu
         else:
-            print("Error: Please select a valid option.")
+            print("\nError: Please select a valid option.")

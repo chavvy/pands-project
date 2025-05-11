@@ -29,7 +29,7 @@ def main():
             print("Exiting application...")
             break  #exit the loop and end the program
         else:
-            print("Error: Please select a valid option.")
+            print("\nError: Please select a valid option.")
 
 if __name__ == "__main__":
     main()
