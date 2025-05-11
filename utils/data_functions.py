@@ -10,11 +10,11 @@ def data_info(name, var):
 
 #functions for getting the first and last rows of a dataset
 #using variable n in case there's a need to get first or last 'n' number of rows instead of 5
-def iris_firstrow_data(array, n=5):
+def firstrow_data(array, n=5):
     print(f"\nFirst {n} rows of data:")
     print(array[:n])
 
-def iris_lastrow_data(array, n=5):
+def lastrow_data(array, n=5):
     print(f"\nLast {n} rows of data:")
     print(array[-n:])
 

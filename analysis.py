@@ -6,10 +6,10 @@ from menu.summarise import summarise_data
 def show_menu():
     print("\nIris Dataset Analysis\n---------\n")
     print("MENU\n====")
-    print("1. Summarise data")
-    print("2. Generate Histogram")
-    print("3. Generate Scatterplot")
-    print("4. [placeholder]")
+    print("1. Dataset information")
+    print("2. Summarise data")
+    print("3. Generate Histogram")
+    print("4. Generate Scatterplot")
     print("x. Exit application")
 
 def main():
@@ -20,7 +20,7 @@ def main():
         if choice == '1':
             summarise_data()
         elif choice == '2':
-            generate_histogram()
+            summarise_data()
         elif choice == '3':
             generate_scatterplot()
         elif choice == '4':
