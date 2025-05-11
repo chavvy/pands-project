@@ -1,5 +1,4 @@
-from utils.data_loader import load_data
-from utils.data_functions import data_features_summary
+from utils import load_data, data_features_summary
 
 dataset = load_data()
 features = dataset['data']
@@ -39,7 +38,7 @@ def summarise_data():
             data_features_summary(features, features_name, "median")
             data_features_summary(features, features_name, "std")
         elif choice == 'x':
-            print("Exiting application...")
-            return  #exit the loop and end the program
+            print("Returning to menu...")
+            return  #exit the loop and return to menu
         else:
             print("Error: Please select a valid option.")

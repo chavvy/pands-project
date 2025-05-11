@@ -1,7 +1,7 @@
 #taking inspiration from applied databases project and making a menu for the user to interact with
 
 #FUNCTIONS WILL BE IMPORTED HERE
-from menu.summarise import summarise_data
+from menu import show_data_info, summarise_data
 
 def show_menu():
     print("\nIris Dataset Analysis\n---------\n")
@@ -18,13 +18,13 @@ def main():
         choice = input("Enter the number of your choice: ").strip().lower()  #get user's choice
         
         if choice == '1':
-            summarise_data()
+            show_data_info()
         elif choice == '2':
             summarise_data()
         elif choice == '3':
-            generate_scatterplot()
+            generate_histogram()
         elif choice == '4':
-            placeholder4()
+            generate_scatterplot()
         elif choice == 'x':
             print("Exiting application...")
             break  #exit the loop and end the program
