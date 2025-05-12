@@ -1,3 +1,4 @@
+import os
 from utils import load_data, data_features_summary, data_features_summary_all, save_output
 
 dataset = load_data()
@@ -50,8 +51,21 @@ def summarise_data():
         
         #giving the user the option to save the summary or not
         save_choice = input(f"\nDo you want to save the {summary_type} summary? (yes/no): ").strip().lower()
-        
+
         if save_choice == "yes":
-            save_output(summary, filename, folder="output")
+            #checking if the file exists in the output folder
+            filepath = os.path.join("output", filename)
+
+            if os.path.exists(filepath):
+                #if the file exists, prompt the user if they want to overwrite it
+                overwrite = input(f"\nThe file '{filename}' already exists. Do you want to overwrite it? (yes/no): ").strip().lower()
+                if overwrite == "yes":
+                    save_output(summary, filename, folder="output")
+                else:
+                    input("\nSave cancelled, press enter to return to menu...")
+            #otherwise, just save the file anyways
+            else:
+                save_output(summary, filename, folder="output")
+
         else:
             print(f"\n{summary_type.capitalize()} summary not saved.")
