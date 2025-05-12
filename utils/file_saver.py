@@ -5,6 +5,8 @@ def save_output(lines, filename="", folder="output"):
 
     #get absolute path to the directory of this script
     #__file__ holds path to current script
+    #this doesnt seem to be needed since the script only works if run from the correct directory anyways
+    #might be worth doing something similar for running the script though
     base_directory = os.path.dirname(os.path.abspath(__file__))
 
     #create full path to output folder

@@ -47,7 +47,7 @@ def data_features_summary(features, features_names, stat="", pause=True):
     lines = []
    
     #adding a line of spacing with .append so it also appears in the saved output
-    lines.append("\n")
+    print("\n")
     lines.append(header)
     lines.append("\n")
 
