@@ -6,8 +6,8 @@ from menu import show_data_info, summarise_data, show_histogram_menu, show_scatt
 def show_menu():
     print("\nDataset Analysis\n---------\n")
     print("MENU\n====")
-    print("1. Dataset information")
-    print("2. Summarise data")
+    print("1. Dataset Information")
+    print("2. Summarise Data")
     print("3. Generate Histogram")
     print("4. Generate Scatterplot")
     print("x. Exit application")
