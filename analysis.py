@@ -1,7 +1,7 @@
 #taking inspiration from applied databases project and making a menu for the user to interact with
 
 #FUNCTIONS WILL BE IMPORTED HERE
-from menu import show_data_info, summarise_data, show_histogram_menu
+from menu import show_data_info, summarise_data, show_histogram_menu, show_scatterplot_menu
 
 def show_menu():
     print("\nDataset Analysis\n---------\n")
@@ -24,7 +24,7 @@ def main():
         elif choice == '3':
             show_histogram_menu()
         elif choice == '4':
-            generate_scatterplot()
+            show_scatterplot_menu()
         elif choice == 'x':
             print("Exiting application...")
             break  #exit the loop and end the program

@@ -99,3 +99,16 @@ def plot_histogram(features, features_names, feature_name):
     plt.show()
     
     input("\nPress Enter to continue...")
+
+def plot_scatterplot(features, x_feature, y_feature, x_feature_name, y_feature_name):
+    #plotting the scatterplot
+    plt.scatter(features[:, x_feature], features[:, y_feature], color='skyblue')
+
+    #adding labels, and title
+    plt.title(f"Scatterplot: {x_feature_name} and {y_feature_name}")
+    plt.xlabel(x_feature_name)
+    plt.ylabel(y_feature_name)
+    plt.grid(True)
+
+    #displaying the scatterplot
+    plt.show()

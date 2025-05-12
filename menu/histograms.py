@@ -5,10 +5,6 @@ from utils import load_data, plot_histogram, save_hist_output
 dataset = load_data()
 features_names = dataset["feature_names"]
 features = dataset["data"]
-features_shape = dataset["data"].shape
-target = dataset['target']
-target_shape = dataset['target'].shape
-target_names = dataset['target_names']
 
 def show_histogram_menu():
 
