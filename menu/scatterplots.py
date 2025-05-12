@@ -1,6 +1,6 @@
 #the scatterplot menu will work pretty much the exact same as the histogram menu
 #except this time the user will be prompted for 2 inputs to compare data in a scatterplot
-from utils import load_data, plot_scatterplot
+from utils import load_data, plot_scatterplot, save_scatter_output
 
 dataset = load_data()
 features_names = dataset["feature_names"]
@@ -44,7 +44,7 @@ def show_scatterplot_menu():
                 #prompting if the user wants to save the scatterplot
                 save_choice = input(f"Do you want to save the histogram of {x_feature_name}? and {y_feature_name} (yes/no): ").strip().lower()
                 if save_choice == "yes":
-                    # save_hist_output(features, features_names, feature_name, folder="output") #save the histogram
+                    save_scatter_output(features, x_feature, y_feature, x_feature_name, y_feature_name, folder="output") #save the scatterplot
                 else:
                     input("\nSave cancelled, press enter to return to menu...")
             else:

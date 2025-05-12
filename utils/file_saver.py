@@ -64,3 +64,36 @@ def save_hist_output(features, features_names, feature_name, folder="output"):
 
     #closing the plot
     plt.close()
+
+#function to save the scatterplot output, similar to the ones above
+def save_scatter_output(features, x_feature, y_feature, x_feature_name, y_feature_name, folder="output"):
+    #plotting the scatterplot
+    plt.scatter(features[:, x_feature], features[:, y_feature], color='skyblue')
+
+    #adding labels, and title
+    plt.title(f"Scatterplot: {x_feature_name} and {y_feature_name}")
+    plt.xlabel(x_feature_name)
+    plt.ylabel(y_feature_name)
+    plt.grid(True)
+
+    #get absolute path to the directory of this script
+    base_directory = os.path.dirname(os.path.abspath(__file__))
+
+    #create full path to output folder
+    output_directory = os.path.join(base_directory, "..", folder)
+
+    #ensure the output directory exists, creates one if it does not
+    os.makedirs(output_directory, exist_ok=True)
+
+    #create full path to output file
+    filepath = os.path.join(output_directory, filename)
+
+    #setting filename and saving the png
+    #using .replace to replace any spaces in the feature names with "_" for neater file names
+    filename = f"{x_feature_name.replace(' ', '_')}_and_{y_feature_name.replace(' ', '_')}_scatterplot.png"
+    plt.savefig(filepath)
+
+    print(f"\nScattorplot saved to: {filepath}")
+
+    #closing the plot 
+    plt.close()
