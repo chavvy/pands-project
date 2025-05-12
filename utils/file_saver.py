@@ -1,4 +1,5 @@
 import os
+import matplotlib.pyplot as plt
 
 #a function that handles saving outputs to a file
 def save_output(lines, filename="", folder="output"):
@@ -24,3 +25,42 @@ def save_output(lines, filename="", folder="output"):
             f.write(line + '\n')
 
     print(f"\nOutput saved to: {filepath}")
+
+#a function to save histogram plots, similar to the one above
+#it generates the plot again but this time will save the png and then close the plot
+def save_hist_output(features, features_names, feature_name, folder="output"):
+    #find the index of the feature
+    feature_index = features_names.index(feature_name)
+    
+    #get the specific feature data (column) by index
+    feature_data = features[:, feature_index]
+
+    #plotting the histogram
+    plt.hist(feature_data, bins=15, color="lightgreen", edgecolor="black", label=f"{feature_name} Feature")
+
+    #adding labels, title, and legend
+    plt.title(f"Histogram of {feature_name}")
+    plt.xlabel(feature_name)
+    plt.ylabel("Frequency")
+    plt.legend()
+
+    #get absolute path to the directory of this script
+    base_directory = os.path.dirname(os.path.abspath(__file__))
+
+    #create full path to output folder
+    output_directory = os.path.join(base_directory, "..", folder)
+
+    #ensure the output directory exists, creates one if it does not
+    os.makedirs(output_directory, exist_ok=True)
+
+    #create full path to output file
+    filepath = os.path.join(output_directory, feature_name)
+
+    #setting filename and saving the png
+    feature_name = f"{feature_name}_histogram.png"
+    plt.savefig(filepath)
+
+    print(f"\nHistogram saved to: {filepath}")
+
+    #closing the plot
+    plt.close()
