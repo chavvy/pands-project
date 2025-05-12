@@ -1,4 +1,5 @@
-from utils import load_data, data_info
+import os
+from utils import load_data, data_info, save_output
 
 iris_data = load_data()
 features_names = iris_data["feature_names"]
@@ -25,19 +26,49 @@ def show_data_info():
         choice = input("Enter the number of your choice: ").strip().lower()  #get user's choice
         
         if choice == '1':
-            data_info("Features", features)
+            dataset_info = data_info("Features", features)
+            dataset_info_type = "features"
         elif choice == '2':
-            data_info("Features Shape", features_shape)
+            dataset_info = data_info("Features Shape", features_shape)
+            dataset_info_type = "features_shape"
         elif choice == '3':
-            data_info("Features Names", features_names)
+            dataset_info = data_info("Features Names", features_names)
+            dataset_info_type = "features_names"
         elif choice == '4':
-            data_info("Target", target)
+            dataset_info = data_info("Target", target)
+            dataset_info_type = "target"
         elif choice == '5':
-            data_info("Target Shapes", target_shape)
+            dataset_info = data_info("Target Shapes", target_shape)
+            dataset_info_type = "target_shapes"
         elif choice == '6':
-            data_info("Target Names", target_names)
+            dataset_info = data_info("Target Names", target_names)
+            dataset_info_type = "target_names"
         elif choice == 'x':
             print("Returning to menu...")
             return  #exit the loop and return to menu
         else:
             print("Error: Please select a valid option.")
+                
+        #filename based on the user's choice
+        filename = f"{dataset_info_type}.txt"
+
+        #giving the user the option to save the dataset info or not
+        save_choice = input(f"\nDo you want to save the {dataset_info_type} information? (yes/no): ").strip().lower()
+
+        if save_choice == "yes":
+            #checking if the file exists in the output folder
+            filepath = os.path.join("output", filename)
+
+            if os.path.exists(filepath):
+                #if the file exists, prompt the user if they want to overwrite it
+                overwrite = input(f"\nThe file '{filename}' already exists. Do you want to overwrite it? (yes/no): ").strip().lower()
+                if overwrite == "yes":
+                    save_output(dataset_info, filename, folder="output")
+                else:
+                    input("\nSave cancelled, press enter to return to menu...")
+            #otherwise, just save the file anyways
+            else:
+                save_output(dataset_info, filename, folder="output")
+
+        else:
+            print(f"\n{dataset_info_type.capitalize()} information not saved.")

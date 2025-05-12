@@ -6,7 +6,7 @@ import numpy as np
 #originally there was a function for every variable, which can be seen in the example_functions.py
 def data_info(name, var):
     lines = [] #list to store the information
-    lines.append(f"\n{name} of the data:\n")
+    lines.append(f"{name} of the data:\n")
     lines.append(str(var))
 
     #printing the final output
