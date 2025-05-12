@@ -1,21 +1,20 @@
-# pands-project
+# Dataset Analysis Application
 
-Dataset Analysis Application
+### **File structure**  
+* pands-project
+    - The root folder
+* utils folder
+    - Contains general use functions that are used throughout
+* menu folder
+    - Contains the menu functions for user interactions
+* output folder
+    - Where generated .txt and .png files are stored
+* analysis.py
+    - Main script to run the application
+* README.md
+    - This file
 
-File structure
-    pands-project
-        The root folder
-    utils folder
-        Contains general use functions that are used throughout
-    menu folder
-        Contains the menu functions for user interaction
-    output folder
-        Where generated .txt and .png files are stored
-    analysis.py
-        Main script to run the application
-    README.md
-        This file
-
+### Description
 This is a python application designed to interactively explore and analyze datasets. The program provides functionality for data inspection, statistical summaries, and visualisations via histograms and scatterplots.
 
 The dataset used is the Iris dataset, which contains measurements for 150 iris flowers from three species:
@@ -38,33 +37,34 @@ The dataset used is the Iris dataset, which contains measurements for 150 iris f
 
         Iris Virginica
 
-In order to run the application, python must be installed (atleast 3.x or higher), and the command must be run from the from the folder in which the script is located.
-Running the script:
-    python analysis.py
+### How to run the application
+In order to run the application, python must be installed (atleast 3.x or higher), and the command must be run from the from the folder in which the script is located.  
 
-Application Menu Options
-    Option 1: Dataset Information
+### Running the script (in terminal):
+    >> cd path/to/analysis.py
+    >> python analysis.py
 
-        View basic details about the features and target data.
+### **Application Menu Options**
+**Option 1: Dataset Information**
 
-        Option to save to .txt file.
+    View basic details about the features and target data.
 
-    Option 2: Summarise Data
+    Option to save to .txt file.
 
-        View statistics such as mean, min, max, median, standard deviation for each feature.
+**Option 2: Summarise Data**
 
-        Option to save results to .txt file.
+    View statistics such as mean, min, max, median, standard deviation for each feature.
 
-    Option 3: Generate Histogram
+    Option to save results to .txt file.
 
-        Choose a feature to visualize its distribution.
+**Option 3: Generate Histogram**
 
-        Option to save the figure as .png.
+    Choose a feature to visualize its distribution.
 
-    Option 4: Generate Scatterplot
+    Option to save the figure as .png.
 
-        Choose any two features to compare via scatterplot.
+**Option 4: Generate Scatterplot**
 
-        Option to save the figure as .png.
+    Choose any two features to compare via scatterplot.
 
-    Generated output files will be saved to the /output/ folder
+    Option to save the figure as .png.
