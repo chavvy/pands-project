@@ -53,11 +53,13 @@ def save_hist_output(features, features_names, feature_name, folder="output"):
     #ensure the output directory exists, creates one if it does not
     os.makedirs(output_directory, exist_ok=True)
 
-    #create full path to output file
-    filepath = os.path.join(output_directory, feature_name)
+    #setting the filename
+    filename = f"{feature_name.replace(' ', '_')}_histogram.png"
 
-    #setting filename and saving the png
-    feature_name = f"{feature_name}_histogram.png"
+    #create full path to output file
+    filepath = os.path.join(output_directory, filename)
+
+    #saving the png
     plt.savefig(filepath)
 
     print(f"\nHistogram saved to: {filepath}")
@@ -85,12 +87,13 @@ def save_scatter_output(features, x_feature, y_feature, x_feature_name, y_featur
     #ensure the output directory exists, creates one if it does not
     os.makedirs(output_directory, exist_ok=True)
 
+    #setting filename - using .replace to replace any spaces in the feature names with "_" for neater file names
+    filename = f"{x_feature_name.replace(' ', '_')}_and_{y_feature_name.replace(' ', '_')}_scatterplot.png"
+
     #create full path to output file
     filepath = os.path.join(output_directory, filename)
 
-    #setting filename and saving the png
-    #using .replace to replace any spaces in the feature names with "_" for neater file names
-    filename = f"{x_feature_name.replace(' ', '_')}_and_{y_feature_name.replace(' ', '_')}_scatterplot.png"
+    #saving the png
     plt.savefig(filepath)
 
     print(f"\nScattorplot saved to: {filepath}")

@@ -16,16 +16,6 @@ def data_info(name, var):
     input("\nPress Enter to continue...")
     return lines
 
-#functions for getting the first and last rows of a dataset
-#using variable n in case there's a need to get first or last 'n' number of rows instead of 5
-def firstrow_data(array, n=5):
-    print(f"\nFirst {n} rows of data:")
-    print(array[:n])
-
-def lastrow_data(array, n=5):
-    print(f"\nLast {n} rows of data:")
-    print(array[-n:])
-
 #functions for summarizing the iris dataset
 def data_features_summary(features, features_names, stat="", pause=True):
     #making a dictiononary to pair each numpy function
@@ -112,3 +102,5 @@ def plot_scatterplot(features, x_feature, y_feature, x_feature_name, y_feature_n
 
     #displaying the scatterplot
     plt.show()
+
+    input("\nPress Enter to continue...")
