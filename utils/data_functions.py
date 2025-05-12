@@ -1,4 +1,5 @@
 import numpy as np
+import matplotlib.pyplot as plt
 #made these functions for use with the principles of data analytics module
 #reusing them for this project
 
@@ -77,3 +78,24 @@ def data_features_summary_all(features, features_names):
     input("\nPress Enter to continue...")
 
     return all_lines
+
+def plot_histogram(features, features_names, feature_name):
+    #find the index of the feature
+    feature_index = features_names.index(feature_name)
+    
+    #get the specific feature data (column) by index
+    feature_data = features[:, feature_index]
+
+    #plotting the histogram
+    plt.hist(feature_data, bins=15, color="lightgreen", edgecolor="black", label=f"{feature_name} Feature")
+
+    #adding labels, title, and legend
+    plt.title(f"Histogram of {feature_name}")
+    plt.xlabel(feature_name)
+    plt.ylabel("Frequency")
+    plt.legend()
+
+    #display the histogram
+    plt.show()
+    
+    input("\nPress Enter to continue...")

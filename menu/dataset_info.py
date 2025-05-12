@@ -1,13 +1,13 @@
 import os
 from utils import load_data, data_info, save_output
 
-iris_data = load_data()
-features_names = iris_data["feature_names"]
-features = iris_data["data"]
-features_shape = iris_data["data"].shape
-target = iris_data['target']
-target_shape = iris_data['target'].shape
-target_names = iris_data['target_names']
+dataset = load_data()
+features_names = dataset["feature_names"]
+features = dataset["data"]
+features_shape = dataset["data"].shape
+target = dataset['target']
+target_shape = dataset['target'].shape
+target_names = dataset['target_names']
 
 #menu for the user to choose info
 def show_info_menu():

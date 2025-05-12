@@ -1,10 +1,10 @@
 #taking inspiration from applied databases project and making a menu for the user to interact with
 
 #FUNCTIONS WILL BE IMPORTED HERE
-from menu import show_data_info, summarise_data
+from menu import show_data_info, summarise_data, show_histogram_menu
 
 def show_menu():
-    print("\nIris Dataset Analysis\n---------\n")
+    print("\nDataset Analysis\n---------\n")
     print("MENU\n====")
     print("1. Dataset information")
     print("2. Summarise data")
@@ -22,7 +22,7 @@ def main():
         elif choice == '2':
             summarise_data()
         elif choice == '3':
-            generate_histogram()
+            show_histogram_menu()
         elif choice == '4':
             generate_scatterplot()
         elif choice == 'x':
